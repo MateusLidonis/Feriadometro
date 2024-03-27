@@ -113,8 +113,3 @@ function converterData(data) {
   // Retornar a data formatada e o dia da semana
   return { dataFormatada, diaDaSemana: diasDaSemana[diaDaSemana] };
 }
-
-// Solicitar permissão para notificações push ao carregar a página
-window.onload = function () {
-  Notification.requestPermission();
-};
