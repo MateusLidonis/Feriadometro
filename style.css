@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.countdown-container {
+  text-align: center;
+  font-size: 40px;
+}
+
+#countdown {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#holiday,
+#dia {
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#dia {
+  margin-bottom: 50px;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  color: orange;
+}
+
+#timer div {
+  margin: 10px;
+}
+
+#timer span {
+  display: block;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+  border: 10px dashed orange;
+  width: 200px;
+  height: 180px;
+  font-size: 140px;
+  padding: 10px;
+}
+
+#label-days,
+#label-hours,
+#label-minutes,
+#label-seconds {
+  font-size: 30px;
+  margin: 10px;
+}
