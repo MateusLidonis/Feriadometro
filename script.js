@@ -56,7 +56,7 @@ function atualizarContagemRegressiva() {
     // Recarregue a página
     setTimeout(function () {
       location.reload();
-    }, 1000);
+    }, 500);
   }
 }
 
