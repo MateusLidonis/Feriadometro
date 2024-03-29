@@ -1,6 +1,7 @@
 // Defina a data do próximo feriado nacional como uma variável global inicialmente
 let proximoFeriado;
 
+let paginaRecarregada = false;
 // Chame a função para obter o próximo feriado
 getHoliday();
 
@@ -41,6 +42,22 @@ function atualizarContagemRegressiva() {
     minutos === 0 || minutos === 1 ? "Minuto" : "Minutos";
   document.getElementById("label-seconds").textContent =
     segundos === 0 || segundos === 1 ? "Segundo" : "Segundos";
+
+  // Verifique se o contador chegou a zero e se a página ainda não foi recarregada
+  if (
+    dias === 0 &&
+    horas === 0 &&
+    minutos === 0 &&
+    segundos === 0 &&
+    !paginaRecarregada
+  ) {
+    // Atualize a variável indicando que a página foi recarregada
+    paginaRecarregada = true;
+    // Recarregue a página
+    setTimeout(function () {
+      location.reload();
+    }, 1000);
+  }
 }
 
 // Função para obter o próximo feriado da API
