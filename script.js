@@ -12,7 +12,6 @@ setInterval(atualizarContagemRegressiva, 1000);
 function atualizarContagemRegressiva() {
   // Verifique se a variável proximoFeriado está definida
   if (!proximoFeriado) {
-    console.error("Próximo feriado não está definido");
     return;
   }
 
@@ -64,7 +63,8 @@ function atualizarContagemRegressiva() {
 function getHoliday() {
   const anoAtual = new Date().getFullYear();
 
-  const holidayURL = `https://brasilapi.com.br/api/feriados/v1/${anoAtual}`;
+  //v1 const holidayURL = `https://brasilapi.com.br/api/feriados/v1/${anoAtual}`;
+  const holidayURL = `https://script.google.com/macros/s/AKfycbwRFtJM6SeDtM1YSScLixpg1MCEg26wiyXg9FtS9gbdoYXK7SEenUgjZSo_JsSzf3QWpQ/exec?year=${anoAtual}`;
 
   fetch(holidayURL)
     .then((response) => response.json())
@@ -80,7 +80,6 @@ function getHoliday() {
       feriadosFuturos.sort(
         (a, b) => new Date(a.date + " 00:00:00") - new Date(b.date)
       );
-
       // O próximo feriado será o primeiro da lista de feriados futuros
       proximoFeriado = new Date(feriadosFuturos[0].date + " 00:00:00");
 
