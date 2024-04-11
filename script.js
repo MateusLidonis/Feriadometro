@@ -64,7 +64,8 @@ function getHoliday() {
   const anoAtual = new Date().getFullYear();
 
   //v1 const holidayURL = `https://brasilapi.com.br/api/feriados/v1/${anoAtual}`;
-  const holidayURL = `https://script.google.com/macros/s/AKfycbwRFtJM6SeDtM1YSScLixpg1MCEg26wiyXg9FtS9gbdoYXK7SEenUgjZSo_JsSzf3QWpQ/exec?year=${anoAtual}`;
+  // v1.1 const holidayURL = `https://script.google.com/macros/s/AKfycbwRFtJM6SeDtM1YSScLixpg1MCEg26wiyXg9FtS9gbdoYXK7SEenUgjZSo_JsSzf3QWpQ/exec?year=${anoAtual}`;
+  const holidayURL = `https://script.google.com/macros/s/AKfycbyGpVV1056-BEZS-6Wz4gCqVXlok0nQpShG9dTbjzozXfMCGbOGRiXlKm1bqfjWJpCO_A/exec?type=nacional&${anoAtual}`;
 
   fetch(holidayURL)
     .then((response) => response.json())
