@@ -2,6 +2,9 @@
 let proximoFeriado;
 
 let paginaRecarregada = false;
+
+document.getElementById("loading").style.display = "flex";
+
 // Chame a função para obter o próximo feriado
 getHoliday();
 
@@ -65,7 +68,7 @@ function getHoliday() {
 
   //v1 const holidayURL = `https://brasilapi.com.br/api/feriados/v1/${anoAtual}`;
   // v1.1 const holidayURL = `https://script.google.com/macros/s/AKfycbwRFtJM6SeDtM1YSScLixpg1MCEg26wiyXg9FtS9gbdoYXK7SEenUgjZSo_JsSzf3QWpQ/exec?year=${anoAtual}`;
-  const holidayURL = `https://script.google.com/macros/s/AKfycbyGpVV1056-BEZS-6Wz4gCqVXlok0nQpShG9dTbjzozXfMCGbOGRiXlKm1bqfjWJpCO_A/exec?type=nacional&${anoAtual}`;
+  const holidayURL = `https://script.google.com/macros/s/AKfycbxIceWYKXQ33Suxg6Ya-4c9q95ZIn8mwpzi6Kld9x-_Yf9LBaY5QC4Y1R02oNK25J-NHw/exec?type=nacional&year=${anoAtual}`;
 
   fetch(holidayURL)
     .then((response) => response.json())
@@ -95,6 +98,11 @@ function getHoliday() {
 
       // Atualizar a contagem regressiva quando a data do próximo feriado for definida
       atualizarContagemRegressiva();
+
+      document.getElementById("loading").style.opacity = "0";
+      setTimeout(function () {
+        document.getElementById("loading").style.display = "none";
+      }, 500);
     })
     .catch((error) => console.error("Erro ao obter feriados:", error));
 }
