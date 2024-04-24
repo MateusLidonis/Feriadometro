@@ -13,6 +13,7 @@
     ></script>
   </head>
   <body>
+    <div id="tsparticles" style="background-color: transparent"></div>
     <div id="loading">
       <div class="loading-content">
         <img src="assets/loading.gif" alt="Loading GIF" />
@@ -22,6 +23,39 @@
 
     <div class="countdown-container">
       <h1>Feriadômetro</h1>
+      <div id="state">
+        <span>Em qual estado você mora?</span>
+        <select id="combobox-uf">
+          <option value="br">-</option>
+          <option value="ac">Acre</option>
+          <option value="al">Alagoas</option>
+          <option value="ap">Amapá</option>
+          <option value="am">Amazonas</option>
+          <option value="ba">Bahia</option>
+          <option value="ce">Ceará</option>
+          <option value="df">Distrito Federal</option>
+          <option value="es">Espírito Santo</option>
+          <option value="go">Goiás</option>
+          <option value="ma">Maranhão</option>
+          <option value="mt">Mato Grosso</option>
+          <option value="ms">Mato Grosso do Sul</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="pa">Pará</option>
+          <option value="pb">Paraíba</option>
+          <option value="pr">Paraná</option>
+          <option value="pe">Pernambuco</option>
+          <option value="pi">Piauí</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="rn">Rio Grande do Norte</option>
+          <option value="rs">Rio Grande do Sul</option>
+          <option value="ro">Rondônia</option>
+          <option value="rr">Roraima</option>
+          <option value="sc">Santa Catarina</option>
+          <option value="sp">São Paulo</option>
+          <option value="se">Sergipe</option>
+          <option value="to">Tocantins</option>
+        </select>
+      </div>
       <div id="countdown">
         <div id="timer">
           <div>
@@ -45,7 +79,212 @@
       <div id="holiday"></div>
       <div id="dia"></div>
     </div>
+    <div id="otherHolidays-container">
+      <div id="municipios">
+        <h2>Aniversário das cidades do mês:</h2>
+      </div>
+      <div id="feriados">
+        <h2>Próximos Feriados:</h2>
+      </div>
+      <div id="comemorativos">
+        <h2>Datas comemorativas do mês:</h2>
+      </div>
+    </div>
+    <hr />
 
-    <script src="script.js"></script>
+    <div class="column-container">
+      <div class="column-item" id="why-use-feriadometro">
+        <h1>Por Que Usar o Feriadômetro? 🚀</h1>
+        <p>
+          Em um mundo onde cada minuto conta, o Feriadômetro é sua ferramenta
+          essencial para não só contar o tempo, mas para fazer o tempo contar.
+          Aqui estão algumas razões pelas quais o Feriadômetro é indispensável:
+        </p>
+        <ul>
+          <li>
+            <b>Antecipação Inteligente:</b> Saiba com precisão quando será o
+            próximo feriado e se planeje com antecedência.
+          </li>
+          <li>
+            <b>Maximize Seu Descanso:</b> Aproveite ao máximo seus dias de
+            folga, planejando atividades que recarregam suas energias.
+          </li>
+          <li>
+            <b>Conexão Cultural:</b> Descubra e celebre feriados locais,
+            estaduais e nacionais, enriquecendo sua experiência cultural.
+          </li>
+          <li>
+            <b>Produtividade e Bem-Estar:</b> Equilibre trabalho e lazer,
+            aumentando sua produtividade e bem-estar geral.
+          </li>
+          <li>
+            <b>Comunidade e Compartilhamento:</b> Junte-se a uma comunidade de
+            usuários que valorizam cada momento de celebração.
+          </li>
+        </ul>
+        <p>
+          O Feriadômetro é mais do que um calendário; é um estilo de vida.
+          <b>Transforme sua maneira de vivenciar os feriados</b> e torne cada
+          dia de folga uma experiência única e memorável.
+        </p>
+      </div>
+
+      <div class="column-item" id="tips">
+        <h1>Dicas para Aproveitar ao Máximo Seus Feriados 🏖️</h1>
+        <p>
+          Descubra como transformar seus feriados em momentos inesquecíveis com
+          nossas dicas exclusivas. O Feriadômetro não só conta o tempo até seu
+          próximo dia de folga, mas também oferece ideias inspiradoras para você
+          curtir cada segundo.
+        </p>
+      </div>
+      <div class="column-item" id="about">
+        <h1>Prepare-se para os Feriados com o Feriadômetro! 🎉</h1>
+        <p>
+          Não deixe que os feriados passem despercebidos! Com o Feriadômetro,
+          você terá sempre em mãos uma <b>contagem regressiva precisa</b> para o
+          próximo descanso merecido. Seja um feriado nacional vibrante, um dia
+          tranquilo de folga estadual ou uma celebração municipal única, o
+          Feriadômetro é seu aliado perfeito.
+        </p>
+        <p>
+          Planeje com antecedência aquela viagem dos sonhos, um retiro relaxante
+          ou momentos memoráveis com quem você ama. O Feriadômetro é a
+          ferramenta que faltava para otimizar seu tempo livre.
+          <b>Nunca mais perca um feriado</b> - o Feriadômetro garante que cada
+          dia de folga seja uma oportunidade de ouro para enriquecer sua vida!
+        </p>
+      </div>
+    </div>
+    <hr />
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.31.0"></script>
+
+    <script type="module" src="script.js"></script>
+
+    <script>
+      tsParticles.load("tsparticles", {
+        fullScreen: { enable: true, zIndex: -1 }, // zIndex definido para enviar partículas para o fundo
+        background: { color: "#ffffff" },
+        particles: {
+          number: {
+            value: 0,
+          },
+          color: {
+            value: ["#00FFFC", "#FC00FF", "#fffc00"],
+          },
+          shape: {
+            type: ["circle", "square", "triangle"],
+            options: {},
+          },
+          opacity: {
+            value: {
+              min: 0,
+              max: 1,
+            },
+            animation: {
+              enable: true,
+              speed: 5,
+              startValue: "max",
+              destroy: "min",
+            },
+          },
+          size: {
+            value: {
+              min: 2,
+              max: 6,
+            },
+          },
+          links: {
+            enable: false,
+          },
+          life: {
+            duration: {
+              sync: true,
+              value: 5,
+            },
+            count: 1,
+          },
+          move: {
+            enable: true,
+            gravity: {
+              enable: true,
+              acceleration: 10,
+            },
+            speed: {
+              min: 5,
+              max: 15,
+            },
+            decay: 0.1,
+            direction: "none",
+            straight: false,
+            outModes: {
+              default: "destroy",
+              top: "none",
+            },
+          },
+          rotate: {
+            value: {
+              min: 0,
+              max: 360,
+            },
+            direction: "random",
+            move: true,
+            animation: {
+              enable: true,
+              speed: 60,
+            },
+          },
+          tilt: {
+            direction: "random",
+            enable: true,
+            move: true,
+            value: {
+              min: 0,
+              max: 360,
+            },
+            animation: {
+              enable: true,
+              speed: 60,
+            },
+          },
+          roll: {
+            darken: {
+              enable: true,
+              value: 25,
+            },
+            enable: true,
+            speed: {
+              min: 15,
+              max: 25,
+            },
+          },
+          wobble: {
+            distance: 30,
+            enable: true,
+            move: true,
+            speed: {
+              min: -15,
+              max: 15,
+            },
+          },
+        },
+        emitters: {
+          life: {
+            count: 0,
+            duration: 0.1,
+            delay: 0.4,
+          },
+          rate: {
+            delay: 0.1,
+            quantity: 150,
+          },
+          size: {
+            width: 0,
+            height: 0,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
